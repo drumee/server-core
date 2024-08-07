@@ -1,6 +1,6 @@
 {
   "name": "@drumee/server-core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Drumee server core",
   "main": "lib/index.js",
   "scripts": {
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:somanos/drumee-server-core.git"
+    "url": "git@github.com:drumee/server-core.git"
   },
   "bugs": {
-    "url": "https://github.com/somanos/drumee-server-core/issues"
+    "url": "https://github.com/drumee/server-core/issues"
   },
   "author": "Somanos Sar <somanos@drumee.com>",
   "license": "AGPL V3",
