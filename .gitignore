@@ -142,3 +142,4 @@ git-status.*
 build/
 t
 .dev-tools.rc/
+node_modules/
