@@ -24,7 +24,7 @@
     "readline-sync": "^1.4.10"
   },
   "dependencies": {
-    "@drumee/server-essentials": "^1.0.5",
+    "@drumee/server-essentials": "^1.0.13",
     "accept-language": "^3.0.18",
     "cookie": "^0.5.0",
     "multiparty": "^4.2.3",
