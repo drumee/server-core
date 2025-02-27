@@ -26,7 +26,7 @@
   "dependencies": {
     "@drumee/server-essentials": "^1.0.21",
     "accept-language": "^3.0.18",
-    "cookie": "^0.5.0",
+    "cookie": "^1.0.2",
     "multiparty": "^4.2.3",
     "shelljs": "^0.8.5"
   }
