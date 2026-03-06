@@ -1,6 +1,6 @@
 {
   "name": "@drumee/server-core",
-  "version": "1.1.63",
+  "version": "1.1.64",
   "description": "Drumee server core",
   "main": "lib/index.js",
   "scripts": {
