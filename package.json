@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@drumee/server-core": "^1.1.57",
-    "@drumee/server-essentials": "^1.2.31",
+    "@drumee/server-essentials": "^1.2.32",
     "accept-language": "^3.0.18",
     "cookie": "^1.0.2",
     "multiparty": "^4.2.3",
