@@ -6,26 +6,28 @@
 
 ## Table of Contents
 
-1. [Platform Context](#1-platform-context)
-2. [The Hub — Multi-Tenancy Unit](#2-the-hub--multi-tenancy-unit)
-3. [Full Stack Overview](#3-full-stack-overview)
-4. [High-Level Request Pipeline](#4-high-level-request-pipeline)
-5. [Module Responsibilities](#5-module-responsibilities)
-6. [Base Class and Inheritance](#6-base-class-and-inheritance)
-7. [Event-Driven Flow](#7-event-driven-flow)
-8. [Session Lifecycle](#8-session-lifecycle)
-9. [Access Control Model](#9-access-control-model)
-10. [Service Declarations](#10-service-declarations)
-11. [Meta-Filesystem (MFS)](#11-meta-filesystem-mfs)
-12. [Media Processing](#12-media-processing)
-13. [Response Formatting](#13-response-formatting)
-14. [LETC — Frontend Rendering Engine](#14-letc--frontend-rendering-engine)
-15. [Error Handling](#15-error-handling)
-16. [Runtime Environment](#16-runtime-environment)
-17. [Yellow Pages (YP) — Service Registry](#17-yellow-pages-yp--service-registry)
-18. [Plugin / Extensibility Model](#18-plugin--extensibility-model)
-19. [Key Conventions](#19-key-conventions)
-20. [Dependency Map](#20-dependency-map)
+- [Architecture Overview — @drumee/server-core](#architecture-overview--drumeeserver-core)
+  - [Table of Contents](#table-of-contents)
+  - [1. Platform Context](#1-platform-context)
+  - [2. The Hub — Multi-Tenancy Unit](#2-the-hub--multi-tenancy-unit)
+  - [3. Full Stack Overview](#3-full-stack-overview)
+  - [4. High-Level Request Pipeline](#4-high-level-request-pipeline)
+  - [5. Module Responsibilities](#5-module-responsibilities)
+  - [6. Base Class and Inheritance](#6-base-class-and-inheritance)
+  - [7. Event-Driven Flow](#7-event-driven-flow)
+  - [8. Session Lifecycle](#8-session-lifecycle)
+  - [9. Access Control Model](#9-access-control-model)
+  - [10. Service Declarations](#10-service-declarations)
+  - [11. Meta-Filesystem (MFS)](#11-meta-filesystem-mfs)
+  - [12. Media Processing](#12-media-processing)
+  - [13. Response Formatting](#13-response-formatting)
+  - [14. LETC — Frontend Rendering Engine](#14-letc--frontend-rendering-engine)
+  - [15. Error Handling](#15-error-handling)
+  - [16. Runtime Environment](#16-runtime-environment)
+  - [17. Yellow Pages (YP) — Service Registry](#17-yellow-pages-yp--service-registry)
+  - [18. Plugin / Extensibility Model](#18-plugin--extensibility-model)
+  - [19. Key Conventions](#19-key-conventions)
+  - [20. Dependency Map](#20-dependency-map)
 
 ---
 
@@ -496,7 +498,7 @@ This means `server-core` is an infrastructure boundary — it should not need to
 {mfs_root}/{node_path}/info.json          ← metadata cache
 ```
 
-**Async strategy:** Database and I/O calls use YP callbacks. Media generation uses `async/await`. Child processes for background work are fire-and-forget (`detached: true`).
+**Async strategy:** Database and I/O calls use YP callbacks. Media generation uses `async/await`. For long run calls, child processes are forked in background in fire-and-forget mode (`detached: true`) or queued. Results are later pushed back through websocket.
 
 ---
 
